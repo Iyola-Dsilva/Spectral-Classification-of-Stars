@@ -1,0 +1,70 @@
+<html>
+    <head><title>Stars Classification</title>
+        <style>
+            body{
+                text-align: center;
+                display: block;
+                background-image:url('static/bg1.jpg');
+                background-repeat:no-repeat ;
+                background-attachment: fixed;
+                background-size:cover;
+                color:white;
+            }
+
+            h1{
+                margin:3%;
+                font-size: 50px;
+            }
+
+            form{
+                margin:2% 25%;
+                font-size:30px;
+                border: 2px solid rgb(146, 215, 238);
+                border-radius: 10%;
+                padding:5%;
+                background-color: rgba(0, 0,0, 0.8);
+            }
+
+            .in{
+                margin-top:20px;
+            }
+            p{
+                background-color: rgba(0, 0,0, 0.9);
+                margin:0% 20%;
+                margin-top: 5%;
+                padding: 10px;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Spectral Classification of Stars</h1>
+        <form method="post" action="{{url_for('home')}}">
+                <div class="in">
+                <label for="temp">Absolute Temperature</label>
+                <input type="text" name="temp"  required/>
+                </div>
+                <div class="in">
+                <label for="lum">Relative Luminosity</label>
+                <input type="text" name="lum" required/>
+                </div>
+                <div class="in">
+                <label for="rad">Relative Radius</label>
+                <input type="text" name="rad" required/>
+                </div>
+                <div class="in">
+                <label for="clr">Absolute Magnitude</label>
+                <input type="text" name="mg" required/>
+                </div> 
+                <div>
+                <input type="submit" name="Predict" value="Predict" style="margin-top: 30px;font-size:20px;padding:10px 20px;border-radius:10%;"/></div>  
+            
+            
+        </form> 
+        <p>Try giving a Star's Info and the model shall predict its Spectral class, For example a star with<br>
+            2637 | 0.00073  | 0.127  | 17.22  ->  is of ... Class?<br>
+            8570 |  0.00081 |  0.0097 |  14.2   ->  is of ... Class?
+        </p>
+    </body>
+</html>
+    
